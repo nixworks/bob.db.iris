@@ -6,6 +6,7 @@
 """Tests various examples for xbob.db.iris
 """
 
+import nose.tools
 from xbob.io import test_utils
 
 def test_lda():
@@ -14,6 +15,7 @@ def test_lda():
   cmdline = ['--self-test']
   assert main(cmdline) == 0
 
+@nose.tools.nottest
 @test_utils.ffmpeg_found()
 def test_backprop():
 
@@ -21,6 +23,7 @@ def test_backprop():
   cmdline = ['--self-test']
   assert main(cmdline) == 0
 
+@nose.tools.nottest
 @test_utils.ffmpeg_found()
 def test_rprop():
 

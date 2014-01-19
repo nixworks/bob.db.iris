@@ -26,7 +26,7 @@ setup(
       'setuptools',
       'xbob.io',
       'xbob.measure',
-      'xbob.linear.linear',
+      'xbob.learn.linear',
       'xbob.db.base',
     ],
 

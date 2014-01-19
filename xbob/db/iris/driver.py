@@ -6,7 +6,7 @@
 """Interface definition for Bob's database driver
 """
 
-from ..driver import Interface as AbstractInterface
+from xbob.db.base.driver import Interface as AbstractInterface
 
 class Interface(AbstractInterface):
   """Bob Manager interface for the Iris Flower Database"""

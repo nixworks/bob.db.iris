@@ -20,22 +20,22 @@ class IrisDBScriptTest(unittest.TestCase):
 
   def test01_iris_dump(self):
    
-    from xbob.db.script.dbmanage import main
+    from xbob.db.base.script.dbmanage import main
     cmdline = 'iris dump --self-test'
     self.assertEqual(main(cmdline.split()), 0)
 
   def test02_iris_dump(self):
     
-    from xbob.db.script.dbmanage import main
+    from xbob.db.base.script.dbmanage import main
     cmdline = 'iris dump --class=versicolor --self-test'
     self.assertEqual(main(cmdline.split()), 0)
 
   def test03_iris_files(self):
 
-    from xbob.db.script.dbmanage import main
+    from xbob.db.base.script.dbmanage import main
     self.assertEqual(main('iris files'.split()), 0)
 
   def test04_iris_version(self):
 
-    from xbob.db.script.dbmanage import main
+    from xbob.db.base.script.dbmanage import main
     self.assertEqual(main('iris version'.split()), 0)

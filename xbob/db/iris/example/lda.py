@@ -39,8 +39,8 @@ showing that Fisher's solution was approximately correct.
 import os
 import sys
 import numpy
-import xbob.db
-import xbob.trainer
+import xbob.db.iris
+import xbob.learn.linear
 import optparse
 import tempfile #for package tests
 
@@ -57,7 +57,7 @@ def choose_matplotlib_iteractive_backend():
 def create_machine(data):
   """Creates the machine given the training data"""
 
-  lda = xbob.trainer.FisherLDATrainer()
+  lda = xbob.learn.linear.FisherLDATrainer()
   machine, eigenValues = lda.train(data.values())
 
   return machine

@@ -100,7 +100,7 @@ def __dump__(args):
 
   output = sys.stdout
   if args.selftest:
-    from ..utils import null
+    from xbob.db.base.utils import null
     output = null()
 
   for k, v in d.items():

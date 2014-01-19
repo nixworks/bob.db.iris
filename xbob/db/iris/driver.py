@@ -30,7 +30,7 @@ class Interface(AbstractInterface):
     '''Returns the current version number from Bob's build'''
 
     import pkg_resources  # part of setuptools
-    version = pkg_resources.require('xbob.db')[0].version
+    version = pkg_resources.require('xbob.db.iris')[0].version
     return version + ' (built-in)'
 
   def type(self):

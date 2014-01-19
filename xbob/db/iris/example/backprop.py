@@ -16,8 +16,8 @@ import sys
 import xbob.io
 import xbob.db
 import xbob.measure
-import xbob.machine
-import xbob.trainer
+import xbob.learn.mlp
+import xbob.learn.activation
 import optparse
 import tempfile #for package tests
 import numpy
@@ -52,12 +52,12 @@ def generate_testdata(data, target):
 def create_machine(data, training_steps):
   """Creates the machine given the training data"""
 
-  mlp = xbob.machine.MLP((4, 4, len(data)))
-  mlp.hidden_activation = xbob.machine.HyperbolicTangentActivation()
-  mlp.output_activation = xbob.machine.HyperbolicTangentActivation()
+  mlp = xbob.learn.mlp.MLP((4, 4, len(data)))
+  mlp.hidden_activation = xbob.learn.activation.HyperbolicTangent()
+  mlp.output_activation = xbob.learn.activation.HyperbolicTangent()
   mlp.randomize() #reset weights and biases to a value between -0.1 and +0.1
   BATCH = 50
-  trainer = xbob.trainer.MLPBackPropTrainer(BATCH, xbob.trainer.SquareError(mlp.output_activation), mlp)
+  trainer = xbob.learn.mlp.MLPBackPropTrainer(BATCH, xbob.learn.mlp.SquareError(mlp.output_activation), mlp)
   trainer.trainBiases = True #this is the default, but just to clarify!
   trainer.momentum = 0.1 #some momenta
 
@@ -74,10 +74,10 @@ def create_machine(data, training_steps):
   AllData, AllTargets = generate_testdata(datalist, targets)
 
   # A helper to select and shuffle the data
-  S = xbob.trainer.DataShuffler(datalist, targets)
+  S = xbob.learn.mlp.DataShuffler(datalist, targets)
 
   # We now iterate for several steps, look for the convergence
-  retval = [xbob.machine.MLP(mlp)]
+  retval = [xbob.learn.mlp.MLP(mlp)]
 
   for k in range(training_steps):
 
@@ -89,7 +89,7 @@ def create_machine(data, training_steps):
     trainer.train_(mlp, input, target)
     print("|RMSE| @%d:" % (k,), end=' ')
     print(numpy.linalg.norm(xbob.measure.rmse(mlp(AllData), AllTargets)))
-    retval.append(xbob.machine.MLP(mlp))
+    retval.append(xbob.learn.mlp.MLP(mlp))
 
   return retval #all machines => nice plotting!
 

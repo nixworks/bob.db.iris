@@ -3,30 +3,27 @@
 # Andre Anjos <andre.anjos@idiap.ch>
 # Tue 21 Aug 2012 13:20:38 CEST 
 
-"""Tests various examples for xbob.db
+"""Tests various examples for xbob.db.iris
 """
 
-import unittest
-from ...test import utils
+from xbob.io import test_utils
 
-class ExampleTest(unittest.TestCase):
+def test_lda():
 
-  def test01_iris_lda(self):
+  from .example.lda import main
+  cmdline = ['--self-test']
+  assert main(cmdline) == 0
 
-    from ..example.iris_lda import main
-    cmdline = ['--self-test']
-    self.assertEqual(main(cmdline), 0)
+@test_utils.ffmpeg_found()
+def test_backprop():
 
-  @utils.ffmpeg_found()
-  def test02_iris_backprop(self):
+  from .example.backprop import main
+  cmdline = ['--self-test']
+  assert main(cmdline) == 0
 
-    from ..example.iris_backprop import main
-    cmdline = ['--self-test']
-    self.assertEqual(main(cmdline), 0)
+@test_utils.ffmpeg_found()
+def test_rprop():
 
-  @utils.ffmpeg_found()
-  def test03_iris_rprop(self):
-
-    from ..example.iris_rprop import main
-    cmdline = ['--self-test']
-    self.assertEqual(main(cmdline), 0)
+  from .example.rprop import main
+  cmdline = ['--self-test']
+  assert main(cmdline) == 0

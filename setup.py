@@ -28,6 +28,7 @@ setup(
       'xbob.measure',
       'xbob.learn.linear',
       'xbob.db.base',
+      'matplotlib',
     ],
 
     namespace_packages=[

@@ -20,13 +20,13 @@ def test_iris_dump():
   cmdline = 'iris dump --self-test'
   assert main(cmdline.split()) == 0
 
-def test_iris_dump():
+def test_iris_dump_2():
 
   from xbob.db.base.script.dbmanage import main
   cmdline = 'iris dump --class=versicolor --self-test'
   assert main(cmdline.split()) == 0
 
-def test_iris_files():
+def test_iris_files_2():
 
   from xbob.db.base.script.dbmanage import main
   assert main('iris files'.split()) == 0

@@ -4,7 +4,7 @@
 
 .. testsetup:: *
 
-   import xbob.db
+   import xbob.db.iris
 
 ======================
  Iris Flower Data Set

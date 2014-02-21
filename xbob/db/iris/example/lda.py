@@ -3,19 +3,7 @@
 # Andre Anjos <andre.anjos@idiap.ch>
 # Mon Jun 27 17:17:01 2011 +0200
 #
-# Copyright (C) 2011-2013 Idiap Research Institute, Martigny, Switzerland
-# 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, version 3 of the License.
-# 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-# 
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# Copyright (C) 2011-2014 Idiap Research Institute, Martigny, Switzerland
 
 """This example shows how to use the Iris Flower (Fisher's) Dataset to create
 3-class classifier based on Linear Discriminant Analysis.
@@ -27,7 +15,7 @@ Fisher does the "right" thing only for the first 2-class problem (setosa x
 versicolor). You can reproduce the 2-class LDA using bob's LDA training
 system w/o problems. When inserting the virginica class, Fisher decides for a
 different metric (4vi + ve -5se) and solves lambda for the matrices in the last
-row of Table VIII. 
+row of Table VIII.
 
 This is OK, but does not generalize the method proposed on the begining of his
 paper. Results achieved by the generalized LDA method will not match Fisher's
@@ -64,7 +52,7 @@ def create_machine(data):
 
 def process_data(machine, data):
   """Iterates over classes and passes data through the trained machine"""
-  
+
   output = {}
   for cl in data.keys():
     output[cl]=machine.forward(data[cl])
@@ -84,14 +72,14 @@ def plotting(output, filename=None):
   import matplotlib.pyplot as mpl
 
   histo = {}
-  for k in output.keys(): 
+  for k in output.keys():
     histo[k] = numpy.vstack(output[k])[:,0]
 
   # Plots the class histograms
   mpl.hist(histo['setosa'], bins=8, color='green', label='Setosa', alpha=0.5)
   mpl.hist(histo['versicolor'], bins=8, color='blue', label='Versicolor',
       alpha=0.5)
-  mpl.hist(histo['virginica'], bins=8, color='red', label='Virginica', 
+  mpl.hist(histo['virginica'], bins=8, color='red', label='Virginica',
       alpha=0.5)
   mpl.legend()
   mpl.grid(True)
@@ -107,7 +95,7 @@ def plotting(output, filename=None):
 def main(user_input=None):
 
   import argparse
-  
+
   parser = argparse.ArgumentParser(description=__doc__,
       formatter_class=argparse.RawDescriptionHelpFormatter)
   parser.add_argument("-f", "--file", dest="filename", default=None,

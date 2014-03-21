@@ -51,6 +51,11 @@ The database also contains statistics about the feature vectors, which can be
 obtained using the :py:attr:`xbob.db.iris.stats` dictionary. A description
 of these statistics is provided by :py:attr:`xbob.db.iris.stat_names`.
 
+References
+----------
+
+.. automodule:: xbob.db.iris
+
 Indices and tables
 ------------------
 

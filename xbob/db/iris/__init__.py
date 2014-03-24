@@ -35,6 +35,10 @@ import sys
 import numpy
 from . import driver #driver interface
 
+import pkg_resources
+
+__version__ = pkg_resources.require(__name__)[0].version
+
 names = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']
 """Names of the features for each entry in the dataset."""
 
@@ -110,4 +114,20 @@ def __dump__(args):
 
   return 0
 
-__all__ = ['names', 'stats', 'stat_names', 'data']
+def get_config():
+  """Returns a string containing the configuration information.
+  """
+
+  import pkg_resources
+
+  packages = pkg_resources.require(__name__)
+  this = packages[0]
+  deps = packages[1:]
+
+  retval =  "%s: %s (%s)\n" % (this.key, this.version, this.location)
+  retval += "  - python dependencies:\n"
+  for d in deps: retval += "    - %s: %s (%s)\n" % (d.key, d.version, d.location)
+
+  return retval.strip()
+
+__all__ = ['names', 'stats', 'stat_names', 'data', 'get_config']

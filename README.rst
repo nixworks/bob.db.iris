@@ -4,6 +4,14 @@
 
 .. image:: https://travis-ci.org/bioidiap/xbob.db.iris.svg?branch=master
    :target: https://travis-ci.org/bioidiap/xbob.db.iris
+.. image:: https://coveralls.io/repos/bioidiap/xbob.db.iris/badge.png
+   :target: https://coveralls.io/r/bioidiap/xbob.db.iris
+.. image:: http://img.shields.io/github/tag/bioidiap/xbob.db.iris.png
+   :target: https://github.com/bioidiap/xbob.db.iris
+.. image:: http://img.shields.io/pypi/v/xbob.db.iris.png
+   :target: https://pypi.python.org/pypi/xbob.db.iris
+.. image:: http://img.shields.io/pypi/dm/xbob.db.iris.png
+   :target: https://pypi.python.org/pypi/xbob.db.iris
 
 ============================
  Python bindings for bob.db

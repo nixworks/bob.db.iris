@@ -26,6 +26,7 @@ A description of the feature vector can be obtained using the attribute
 :py:attr:`xbob.db.iris.names`.
 
 .. doctest::
+   :options: +NORMALIZE_WHITESPACE +ELLIPSIS
 
    >>> descriptor_labels = xbob.db.iris.names
    >>> descriptor_labels
@@ -36,6 +37,7 @@ function. This returns a 3-key dictionary, with 3 :py:class:`numpy.ndarray`
 as values, one for each of the three species of Iris flowers.
 
 .. doctest::
+   :options: +NORMALIZE_WHITESPACE +ELLIPSIS
 
   >>> data = xbob.db.iris.data()
   >>> type(data['setosa'])
@@ -43,7 +45,7 @@ as values, one for each of the three species of Iris flowers.
   >>> data['setosa'].shape
   (50, 4)
   >>> list(data.keys())
-  ['setosa', 'versicolor', 'virginica']
+  [...]
 
 Each :py:class:`numpy.ndarray` consists of 50 feature vectors of length four.
 

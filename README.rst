@@ -2,8 +2,8 @@
 .. Andre Anjos <andre.anjos@idiap.ch>
 .. Thu 29 Aug 2013 16:07:57 CEST
 
-.. image:: https://travis-ci.org/bioidiap/xbob.db.base.svg?branch=master
-   :target: https://travis-ci.org/bioidiap/xbob.db.base
+.. image:: https://travis-ci.org/bioidiap/xbob.db.iris.svg?branch=master
+   :target: https://travis-ci.org/bioidiap/xbob.db.iris
 
 ============================
  Python bindings for bob.db

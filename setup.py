@@ -12,7 +12,7 @@ setup(
     name='xbob.db.iris',
     version=version,
     description='Bob access API for Fisher\'s Iris Flower Dataset',
-    url='http://github.com/anjos/xbob.db.iris',
+    url='http://github.com/bioidiap/xbob.db.iris',
     license='BSD',
     author='Andre Anjos',
     author_email='andre.anjos@idiap.ch',

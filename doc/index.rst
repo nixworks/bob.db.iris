@@ -10,6 +10,8 @@
  Iris Flower Data Set
 ======================
 
+.. todolist::
+
 The `Iris flower data set <http://en.wikipedia.org/wiki/Iris_flower_data_set>`_
 or Fisher's Iris data set is a multivariate data set introduced by Sir Ronald
 Aylmer Fisher (1936) as an example of discriminant analysis. The dataset
@@ -32,9 +34,10 @@ A description of the feature vector can be obtained using the attribute
    >>> descriptor_labels
    ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']
 
-The data (feature vectors) can be retrieved using the :py:meth:`xbob.db.iris.data()`
-function. This returns a 3-key dictionary, with 3 :py:class:`numpy.ndarray`
-as values, one for each of the three species of Iris flowers.
+The data (feature vectors) can be retrieved using the
+:py:meth:`xbob.db.iris.data()` function. This returns a 3-key dictionary, with
+3 :py:class:`numpy.ndarray` as values, one for each of the three species of
+Iris flowers.
 
 .. doctest::
    :options: +NORMALIZE_WHITESPACE +ELLIPSIS

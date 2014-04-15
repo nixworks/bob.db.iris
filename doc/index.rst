@@ -28,7 +28,7 @@ A description of the feature vector can be obtained using the attribute
 :py:attr:`xbob.db.iris.names`.
 
 .. doctest::
-   :options: +NORMALIZE_WHITESPACE +ELLIPSIS
+   :options: +NORMALIZE_WHITESPACE, +ELLIPSIS
 
    >>> descriptor_labels = xbob.db.iris.names
    >>> descriptor_labels
@@ -40,7 +40,7 @@ The data (feature vectors) can be retrieved using the
 Iris flowers.
 
 .. doctest::
-   :options: +NORMALIZE_WHITESPACE +ELLIPSIS
+   :options: +NORMALIZE_WHITESPACE, +ELLIPSIS
 
   >>> data = xbob.db.iris.data()
   >>> type(data['setosa'])

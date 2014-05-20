@@ -24,7 +24,7 @@ setup(
 
     install_requires=[
       'setuptools',
-      'xbob.io',
+      'xbob.io.base',
       'xbob.measure',
       'xbob.learn.linear',
       'xbob.db.base',

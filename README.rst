@@ -2,16 +2,16 @@
 .. Andre Anjos <andre.anjos@idiap.ch>
 .. Thu 29 Aug 2013 16:07:57 CEST
 
-.. image:: https://travis-ci.org/bioidiap/xbob.db.iris.svg?branch=master
-   :target: https://travis-ci.org/bioidiap/xbob.db.iris
-.. image:: https://coveralls.io/repos/bioidiap/xbob.db.iris/badge.png
-   :target: https://coveralls.io/r/bioidiap/xbob.db.iris
-.. image:: http://img.shields.io/github/tag/bioidiap/xbob.db.iris.png
-   :target: https://github.com/bioidiap/xbob.db.iris
-.. image:: http://img.shields.io/pypi/v/xbob.db.iris.png
-   :target: https://pypi.python.org/pypi/xbob.db.iris
-.. image:: http://img.shields.io/pypi/dm/xbob.db.iris.png
-   :target: https://pypi.python.org/pypi/xbob.db.iris
+.. image:: https://travis-ci.org/bioidiap/bob.db.iris.svg?branch=master
+   :target: https://travis-ci.org/bioidiap/bob.db.iris
+.. image:: https://coveralls.io/repos/bioidiap/bob.db.iris/badge.png
+   :target: https://coveralls.io/r/bioidiap/bob.db.iris
+.. image:: http://img.shields.io/github/tag/bioidiap/bob.db.iris.png
+   :target: https://github.com/bioidiap/bob.db.iris
+.. image:: http://img.shields.io/pypi/v/bob.db.iris.png
+   :target: https://pypi.python.org/pypi/bob.db.iris
+.. image:: http://img.shields.io/pypi/dm/bob.db.iris.png
+   :target: https://pypi.python.org/pypi/bob.db.iris
 
 ============================
  Python bindings for bob.db
@@ -42,7 +42,7 @@ Testing
 
 You can run a set of tests using the nose test runner::
 
-  $ nosetests -sv xbob.db
+  $ nosetests -sv bob.db
 
 .. warning::
 
@@ -59,7 +59,7 @@ You can run our documentation tests using sphinx itself::
 
 You can test overall test coverage with::
 
-  $ nosetests --with-coverage --cover-package=xbob.db
+  $ nosetests --with-coverage --cover-package=bob.db
 
 The ``coverage`` egg must be installed for this to work properly.
 

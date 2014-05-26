@@ -3,11 +3,11 @@
 # Andre Anjos <andre.anjos@idiap.ch>
 # Tue 21 Aug 2012 13:20:38 CEST
 
-"""Tests various examples for xbob.db.iris
+"""Tests various examples for bob.db.iris
 """
 
 import nose.tools
-from xbob.io.base import test_utils
+from bob.io.base import test_utils
 
 def test_lda():
 

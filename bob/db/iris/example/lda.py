@@ -27,8 +27,8 @@ showing that Fisher's solution was approximately correct.
 import os
 import sys
 import numpy
-import xbob.db.iris
-import xbob.learn.linear
+import bob.db.iris
+import bob.learn.linear
 import optparse
 import tempfile #for package tests
 
@@ -45,7 +45,7 @@ def choose_matplotlib_iteractive_backend():
 def create_machine(data):
   """Creates the machine given the training data"""
 
-  lda = xbob.learn.linear.FisherLDATrainer()
+  lda = bob.learn.linear.FisherLDATrainer()
   machine, eigenValues = lda.train(data.values())
 
   return machine
@@ -107,12 +107,12 @@ def main(user_input=None):
   args = parser.parse_args(args=user_input)
 
   # Loads the dataset and performs LDA
-  data = xbob.db.iris.data() #NOT RETURNING GOOD VALUES! STOPPED HERE!
+  data = bob.db.iris.data() #NOT RETURNING GOOD VALUES! STOPPED HERE!
   machine = create_machine(data)
   output = process_data(machine, data)
 
   if args.selftest:
-    (fd, filename) = tempfile.mkstemp('.pdf', 'xbobtest_')
+    (fd, filename) = tempfile.mkstemp('.pdf', 'bobtest_')
     os.close(fd)
     os.unlink(filename)
     plotting(output, filename)

@@ -13,11 +13,11 @@ from __future__ import print_function
 
 import os
 import sys
-import xbob.io
-import xbob.db
-import xbob.measure
-import xbob.learn.activation
-import xbob.learn.mlp
+import bob.io
+import bob.db
+import bob.measure
+import bob.learn.mlp
+import bob.learn.activation
 import optparse
 import tempfile #for package tests
 import numpy
@@ -52,13 +52,14 @@ def generate_testdata(data, target):
 def create_machine(data, training_steps):
   """Creates the machine given the training data"""
 
-  mlp = xbob.learn.mlp.MLP((4, 4, len(data)))
-  mlp.hidden_activation = xbob.learn.activation.HyperbolicTangent()
-  mlp.output_activation = xbob.learn.activation.HyperbolicTangent()
+  mlp = bob.learn.mlp.MLP((4, 4, len(data)))
+  mlp.hidden_activation = bob.learn.activation.HyperbolicTangent()
+  mlp.output_activation = bob.learn.activation.HyperbolicTangent()
   mlp.randomize() #reset weights and biases to a value between -0.1 and +0.1
   BATCH = 50
-  trainer = xbob.learn.mlp.MLPRPropTrainer(BATCH, xbob.learn.mlp.SquareError(mlp.output_activation), mlp)
+  trainer = bob.learn.mlp.MLPBackPropTrainer(BATCH, bob.learn.mlp.SquareError(mlp.output_activation), mlp)
   trainer.trainBiases = True #this is the default, but just to clarify!
+  trainer.momentum = 0.1 #some momenta
 
   targets = [ #we choose the approximate Fisher response!
       numpy.array([+1., -1., -1.]), #setosa
@@ -73,22 +74,22 @@ def create_machine(data, training_steps):
   AllData, AllTargets = generate_testdata(datalist, targets)
 
   # A helper to select and shuffle the data
-  S = xbob.learn.mlp.DataShuffler(datalist, targets)
+  S = bob.learn.mlp.DataShuffler(datalist, targets)
 
   # We now iterate for several steps, look for the convergence
-  retval = [xbob.learn.mlp.MLP(mlp)]
+  retval = [bob.learn.mlp.MLP(mlp)]
 
   for k in range(training_steps):
 
     input, target = S(BATCH)
 
     # We use "train_" which is unchecked and faster. Use train() if you want
-    # checks! See the MLPRPropTrainer documentation for details on this before
-    # choosing the wrong approach.
+    # checks! See the MLPBackPropTrainer documentation for details on this
+    # before choosing the wrong approach.
     trainer.train_(mlp, input, target)
     print("|RMSE| @%d:" % (k,), end=' ')
-    print(numpy.linalg.norm(xbob.measure.rmse(mlp(AllData), AllTargets)))
-    retval.append(xbob.learn.mlp.MLP(mlp))
+    print(numpy.linalg.norm(bob.measure.rmse(mlp(AllData), AllTargets)))
+    retval.append(bob.learn.mlp.MLP(mlp))
 
   return retval #all machines => nice plotting!
 
@@ -124,8 +125,8 @@ def plot(output):
     positives = histo[i][O].copy() #make it C-style contiguous
     negatives = numpy.hstack([histo[i][k] for k in order if k != O])
     # note: threshold a posteriori! (don't do this at home, kids ;-)
-    thres = xbob.measure.eer_threshold(negatives, positives)
-    far, frr = xbob.measure.farfrr(negatives, positives, thres)
+    thres = bob.measure.eer_threshold(negatives, positives)
+    far, frr = bob.measure.farfrr(negatives, positives, thres)
     FAR.append(far)
     FRR.append(frr)
     THRES.append(thres)
@@ -188,7 +189,7 @@ def makemovie(machines, data, filename=None):
     refimage = fig2bzarray(mpl.gcf())
     orows = int(2*(refimage.shape[1]/2))
     ocols = int(2*(refimage.shape[2]/2))
-    output = xbob.io.VideoWriter(filename, orows, ocols, 5) #5 Hz
+    output = bob.io.VideoWriter(filename, orows, ocols, 5) #5 Hz
     print("Saving %d frames to %s" % (len(machines), filename))
 
   for i, k in enumerate(machines):
@@ -214,25 +215,23 @@ def main(user_input=None):
 
   parser = argparse.ArgumentParser(description=__doc__,
       formatter_class=argparse.RawDescriptionHelpFormatter)
-
   parser.add_argument("-t", "--steps", dest="steps", default=10, type=int,
       help="how many training times to train the MLP",
       metavar="INT")
   parser.add_argument("-f", "--file", dest="filename", default=None,
       help="write plot movie to FILE (implies non-interactiveness)",
       metavar="FILE")
-  parser.add_argument("--self-test",
-      action="store_true", dest="selftest", default=False,
-      help=optparse.SUPPRESS_HELP)
+  parser.add_argument("--self-test", action="store_true", dest="selftest",
+      default=False, help=argparse.SUPPRESS)
 
   args = parser.parse_args(args=user_input)
 
   # Loads the dataset and performs LDA
-  data = xbob.db.iris.data()
+  data = bob.db.iris.data()
   machines = create_machine(data, args.steps)
 
   if args.selftest:
-    (fd, filename) = tempfile.mkstemp('.avi', 'xbobtest_')
+    (fd, filename) = tempfile.mkstemp('.avi', 'bobtest_')
     os.close(fd)
     os.unlink(filename)
     makemovie(machines, data, filename)
@@ -241,6 +240,3 @@ def main(user_input=None):
     makemovie(machines, data, args.filename)
 
   return 0
-
-if __name__ == '__main__':
-  main()

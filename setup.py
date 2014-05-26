@@ -9,10 +9,10 @@ version = '2.0.0a0'
 
 setup(
 
-    name='xbob.db.iris',
+    name='bob.db.iris',
     version=version,
     description='Bob access API for Fisher\'s Iris Flower Dataset',
-    url='http://github.com/bioidiap/xbob.db.iris',
+    url='http://github.com/bioidiap/bob.db.iris',
     license='BSD',
     author='Andre Anjos',
     author_email='andre.anjos@idiap.ch',
@@ -24,25 +24,25 @@ setup(
 
     install_requires=[
       'setuptools',
-      'xbob.io.base',
-      'xbob.measure',
-      'xbob.learn.linear',
-      'xbob.db.base',
+      'bob.io.base',
+      'bob.measure',
+      'bob.learn.linear',
+      'bob.db.base',
       'matplotlib',
     ],
 
     namespace_packages=[
-      "xbob",
-      "xbob.db",
+      "bob",
+      "bob.db",
       ],
 
     entry_points={
       'console_scripts': [
-        'iris_lda.py = xbob.db.iris.example.lda:main',
+        'iris_lda.py = bob.db.iris.example.lda:main',
         ],
 
-      'xbob.db': [
-        'iris = xbob.db.iris.driver:Interface',
+      'bob.db': [
+        'iris = bob.db.iris.driver:Interface',
         ],
 
       },

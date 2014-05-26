@@ -104,7 +104,7 @@ def __dump__(args):
 
   output = sys.stdout
   if args.selftest:
-    from xbob.db.base.utils import null
+    from bob.db.base.utils import null
     output = null()
 
   for k, v in d.items():

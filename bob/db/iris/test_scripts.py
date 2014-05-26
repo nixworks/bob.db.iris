@@ -3,12 +3,12 @@
 # Andre Anjos <andre.anjos@idiap.ch>
 # Tue 21 Aug 2012 13:20:38 CEST
 
-"""Tests various scripts for our xbob.db driver
+"""Tests various scripts for our bob.db driver
 """
 
 def test_iris_files():
 
-  from xbob.db.iris.driver import Interface
+  from bob.db.iris.driver import Interface
   import os
 
   for k in Interface().files():
@@ -16,22 +16,22 @@ def test_iris_files():
 
 def test_iris_dump():
 
-  from xbob.db.base.script.dbmanage import main
+  from bob.db.base.script.dbmanage import main
   cmdline = 'iris dump --self-test'
   assert main(cmdline.split()) == 0
 
 def test_iris_dump_2():
 
-  from xbob.db.base.script.dbmanage import main
+  from bob.db.base.script.dbmanage import main
   cmdline = 'iris dump --class=versicolor --self-test'
   assert main(cmdline.split()) == 0
 
 def test_iris_files_2():
 
-  from xbob.db.base.script.dbmanage import main
+  from bob.db.base.script.dbmanage import main
   assert main('iris files'.split()) == 0
 
 def test_iris_version():
 
-  from xbob.db.base.script.dbmanage import main
+  from bob.db.base.script.dbmanage import main
   assert main('iris version'.split()) == 0

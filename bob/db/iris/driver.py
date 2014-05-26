@@ -6,7 +6,7 @@
 """Interface definition for Bob's database driver
 """
 
-from xbob.db.base.driver import Interface as AbstractInterface
+from bob.db.base.driver import Interface as AbstractInterface
 
 class Interface(AbstractInterface):
   """Bob Manager interface for the Iris Flower Database"""
@@ -30,14 +30,14 @@ class Interface(AbstractInterface):
     '''Returns the current version number from Bob's build'''
 
     import pkg_resources  # part of setuptools
-    version = pkg_resources.require('xbob.db.iris')[0].version
+    version = pkg_resources.require('bob.db.iris')[0].version
     return version + ' (built-in)'
 
   def type(self):
     '''Returns the type of auxiliary files you have for this database
     
     If you return 'sqlite', then we append special actions such as 'dbshell'
-    on 'xbob_dbmanage.py' automatically for you. Otherwise, we don't.
+    on 'bob_dbmanage.py' automatically for you. Otherwise, we don't.
 
     If you use auxiliary text files, just return 'text'. We may provide
     special services for those types in the future.

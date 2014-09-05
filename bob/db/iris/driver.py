@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 # Andre Anjos <andre.dos.anjos@gmail.com>
-# Tue 14 Aug 20:34:00 2012 
+# Tue 14 Aug 20:34:00 2012
 
 """Interface definition for Bob's database driver
 """
@@ -11,17 +11,17 @@ from bob.db.base.driver import Interface as AbstractInterface
 class Interface(AbstractInterface):
   """Bob Manager interface for the Iris Flower Database"""
 
-  def name(self): 
+  def name(self):
     '''Returns a simple name for this database, w/o funny characters, spaces'''
     return 'iris'
 
   def files(self):
     '''Returns a python iterable with all auxiliary files needed.
-    
+
     The values should be take w.r.t. where the python file that declares the
     database is sitting at.
     '''
-    
+
     from pkg_resources import resource_filename
     raw_files = ('iris.data', 'iris.names')
     return [resource_filename(__name__, k) for k in raw_files]
@@ -31,11 +31,11 @@ class Interface(AbstractInterface):
 
     import pkg_resources  # part of setuptools
     version = pkg_resources.require('bob.db.iris')[0].version
-    return version + ' (built-in)'
+    return version
 
   def type(self):
     '''Returns the type of auxiliary files you have for this database
-    
+
     If you return 'sqlite', then we append special actions such as 'dbshell'
     on 'bob_dbmanage.py' automatically for you. Otherwise, we don't.
 
@@ -53,7 +53,7 @@ class Interface(AbstractInterface):
 
     from argparse import SUPPRESS
     from . import __doc__ as docs
-    
+
     subparsers = self.setup_parser(parser, "Fisher's Iris Flower dataset", docs)
 
     # get the "dumplist" action from a submodule

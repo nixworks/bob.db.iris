@@ -46,7 +46,7 @@ def create_machine(data):
   """Creates the machine given the training data"""
 
   lda = bob.learn.linear.FisherLDATrainer()
-  machine, eigenValues = lda.train(data.values())
+  machine, eigen_values = lda.train(data.values())
 
   return machine
 
@@ -91,6 +91,7 @@ def plotting(output, filename=None):
     mpl.savefig(filename)
   else: #running in an interactive way, show the plot @ the user screen
     mpl.show()
+    raw_input("Press Enter to finish")
 
 def main(user_input=None):
 

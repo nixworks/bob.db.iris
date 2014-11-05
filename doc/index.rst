@@ -1,10 +1,8 @@
 .. vim: set fileencoding=utf-8 :
-.. Andre Anjos <andre.anjos@idiap.ch>
-.. Mon  4 Nov 20:58:04 2013 CET
+.. @author: Manuel Guenther <Manuel.Guenther@idiap.ch>
+.. @date:   Tue Aug 26 09:42:18 CEST 2014
 
-.. testsetup:: *
-
-   import bob.db.iris
+.. _bob.db.iris:
 
 ======================
  Iris Flower Data Set
@@ -24,42 +22,15 @@ integrated into |project|, which provides both ways to access the data, as well
 as the data itself (feature vectors of length four for various samples of the
 three species).
 
-A description of the feature vector can be obtained using the attribute
-:py:attr:`bob.db.iris.names`.
 
-.. doctest::
-   :options: +NORMALIZE_WHITESPACE, +ELLIPSIS
+Documentation
+-------------
 
-   >>> descriptor_labels = bob.db.iris.names
-   >>> descriptor_labels
-   ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width']
+.. toctree::
+   :maxdepth: 2
 
-The data (feature vectors) can be retrieved using the
-:py:meth:`bob.db.iris.data()` function. This returns a 3-key dictionary, with
-3 :py:class:`numpy.ndarray` as values, one for each of the three species of
-Iris flowers.
-
-.. doctest::
-   :options: +NORMALIZE_WHITESPACE, +ELLIPSIS
-
-  >>> data = bob.db.iris.data()
-  >>> type(data['setosa'])
-  <... 'numpy.ndarray'>
-  >>> data['setosa'].shape
-  (50, 4)
-  >>> list(data.keys())
-  [...]
-
-Each :py:class:`numpy.ndarray` consists of 50 feature vectors of length four.
-
-The database also contains statistics about the feature vectors, which can be
-obtained using the :py:attr:`bob.db.iris.stats` dictionary. A description
-of these statistics is provided by :py:attr:`bob.db.iris.stat_names`.
-
-References
-----------
-
-.. automodule:: bob.db.iris
+   guide
+   py_api
 
 Indices and tables
 ------------------
@@ -67,8 +38,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-.. include:: links.rst
-
-.. Place here your external references
 

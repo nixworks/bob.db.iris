@@ -35,27 +35,27 @@ setup(
     namespace_packages=[
       "bob",
       "bob.db",
-      ],
+    ],
 
     entry_points={
       'console_scripts': [
         'iris_lda.py = bob.db.iris.example.lda:main',
-        ],
+      ],
 
       'bob.db': [
         'iris = bob.db.iris.driver:Interface',
-        ],
-
-      },
+      ],
+    },
 
     classifiers = [
-      'Development Status :: 3 - Alpha',
+      'Framework :: Bob',
+      'Development Status :: 4 - Beta',
       'Intended Audience :: Developers',
       'License :: OSI Approved :: BSD License',
       'Natural Language :: English',
       'Programming Language :: Python',
       'Programming Language :: Python :: 3',
       'Topic :: Software Development :: Libraries :: Python Modules',
-      ],
+    ],
 
-    )
+)

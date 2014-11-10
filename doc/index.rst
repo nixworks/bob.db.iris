@@ -30,6 +30,7 @@ Documentation
    :maxdepth: 2
 
    guide
+   example
    py_api
 
 Indices and tables

@@ -33,8 +33,8 @@ Iris flowers.
   <... 'numpy.ndarray'>
   >>> data['setosa'].shape
   (50, 4)
-  >>> list(data.keys())
-  [...]
+  >>> list(data.keys()) # doctest: +SKIP
+  ['setosa', 'versicolor', 'virginica']
 
 Each :py:class:`numpy.ndarray` consists of 50 feature vectors of length four.
 
@@ -48,5 +48,5 @@ Classifying the Iris Flowers with LDA
 
 As an exemplary use case, we provide a script ``./bin/iris_lda.py`` that computes a Linear Discriminant Analysis (LDA) using the :py:class:`bob.learn.linear.FisherLDATrainer` using all data vectors.
 Afterward, it classifies all training data and plots histograms of the data projected on the first LDA component.
-
+A detailed explanation of this example script is given :ref:`here <iris_example>`.
 

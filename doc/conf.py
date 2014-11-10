@@ -252,7 +252,7 @@ autodoc_default_flags = ['members', 'undoc-members', 'inherited-members', 'show-
 
 # For inter-documentation mapping:
 from bob.extension.utils import link_documentation
-intersphinx_mapping = link_documentation(['python', 'numpy', 'bob.db.base', 'bob.learn.linear'])
+intersphinx_mapping = link_documentation(['python', 'numpy', 'bob.db.base', 'bob.learn.linear', 'bob.measure'])
 
 
 def setup(app):

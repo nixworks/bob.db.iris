@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# vim: set fileencoding=utf-8 :
 # Andre Anjos <andre.anjos@idiap.ch>
 # Sat 24 Mar 2012 18:51:21 CET 
 

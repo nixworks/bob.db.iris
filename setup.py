@@ -3,7 +3,11 @@
 # Andre Anjos <andre.anjos@idiap.ch>
 # Mon 16 Apr 08:18:08 2012 CEST
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, dist
+dist.Distribution(dict(setup_requires=['bob.extension']))
+
+from bob.extension.utils import load_requirements
+install_requires = load_requirements()
 
 # Define package version
 version = open("version.txt").read().rstrip()
@@ -24,14 +28,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
 
-    install_requires=[
-      'setuptools',
-      'bob.io.base',
-      'bob.measure',
-      'bob.learn.linear',
-      'bob.db.base',
-      'matplotlib',
-    ],
+    install_requires = install_requires,
 
     namespace_packages=[
       "bob",

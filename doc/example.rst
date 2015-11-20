@@ -55,8 +55,8 @@ Creating a :py:class:`bob.learn.linear.Machine` to perform Linear Discriminant A
   >>> trainer = bob.learn.linear.FisherLDATrainer()
   >>> data = bob.db.iris.data()
   >>> machine, unused_eigen_values = trainer.train(data.values())
-  >>> machine
-  <bob.learn.linear.Machine float64@(4, 2)>
+  >>> machine.shape
+  (4, 2)
 
 That is it! The returned :py:class:`bob.learn.linear.Machine` is now setup to perform LDA on the Iris data set. 
 A few things should be noted:

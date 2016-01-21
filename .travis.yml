@@ -1,7 +1,6 @@
 language: python
 matrix:
   include:
-  - python: 2.6
   - python: 2.7
     env:
     - secure: SVdoK4kFAB1pAWLd9JXOy7GtEJfcfBVon93Wdv/PijTUR7Cn1lOAc5eSY7l0jFIsok9BIZ55NUiI/ETBsF3x4gtYVLMKof5LIzu2y0duYdynQNFwE9maxFHeR3odiL6JXk2fQDYMAwnQyVBdO5j3DewfIa4ORuc2oJ2GHfX3nJw=
@@ -10,6 +9,7 @@ matrix:
     - BOB_UPLOAD_WHEEL="--universal"
   - python: 3.3
   - python: 3.4
+  - python: 3.5
 before_install:
 - sudo add-apt-repository -y ppa:biometrics/bob
 - sudo apt-get update -qq

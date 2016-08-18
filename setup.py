@@ -17,7 +17,7 @@ setup(
     name='bob.db.iris',
     version=version,
     description='Bob access API for Fisher\'s Iris Flower Dataset',
-    url='http://github.com/bioidiap/bob.db.iris',
+    url='http://gitlab.idiap.ch/bob/bob.db.iris',
     license='BSD',
     author='Andre Anjos',
     author_email='andre.anjos@idiap.ch',

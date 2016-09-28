@@ -43,7 +43,7 @@ In this example, we collect bits and pieces of the previous tutorials and build 
     matplotlib.use('pdf') #non-interactive avoids exception on display
 
 
-Training a :py:class:`bob.machine.LinearMachine` with LDA
+Training a :py:class:`bob.learn.linear.Machine` with LDA
 ---------------------------------------------------------
 
 Creating a :py:class:`bob.learn.linear.Machine` to perform Linear Discriminant Analysis on the Iris dataset involves using the :py:class:`bob.learn.linear.FisherLDATrainer`:

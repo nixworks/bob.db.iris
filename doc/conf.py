@@ -25,6 +25,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
+    'matplotlib.sphinxext.plot_directive'
     ]
 
 import sphinx
@@ -131,7 +132,7 @@ pygments_style = 'sphinx'
 
 # Some variables which are useful for generated material
 project_variable = project.replace('.', '_')
-short_description = u'Bob access API for Fisher's Iris Flower Dataset'
+short_description = u'Bob access API for Fisher\'s Iris Flower Dataset'
 owner = [u'Idiap Research Institute']
 
 

@@ -67,8 +67,9 @@ def data():
   """
   from .driver import Interface
   import csv
+  import pkg_resources
 
-  data = Interface().files()[0]
+  data = pkg_resources.resource_filename(__name__, 'iris.data')
 
   retval = {}
 

@@ -1,17 +1,17 @@
 .. vim: set fileencoding=utf-8 :
 .. Thu 18 Aug 12:03:52 CEST 2016
 
-.. image:: http://img.shields.io/badge/docs-stable-yellow.png
+.. image:: http://img.shields.io/badge/docs-stable-yellow.svg
    :target: http://pythonhosted.org/bob.db.iris/index.html
-.. image:: http://img.shields.io/badge/docs-latest-orange.png
+.. image:: http://img.shields.io/badge/docs-latest-orange.svg
    :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.db.iris/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.iris/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.iris/commits/master
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.iris
-.. image:: http://img.shields.io/pypi/v/bob.db.iris.png
+.. image:: http://img.shields.io/pypi/v/bob.db.iris.svg
    :target: https://pypi.python.org/pypi/bob.db.iris
-.. image:: http://img.shields.io/pypi/dm/bob.db.iris.png
+.. image:: http://img.shields.io/pypi/dm/bob.db.iris.svg
    :target: https://pypi.python.org/pypi/bob.db.iris
 .. image:: https://img.shields.io/badge/original-data--files-a000a0.png
    :target: http://en.wikipedia.org/wiki/Iris_flower_data_set
@@ -46,6 +46,6 @@ development `mailing list`_.
 
 .. Place your references here:
 .. _bob: https://www.idiap.ch/software/bob
-.. _installation: https://gitlab.idiap.ch/bob/bob/wikis/Installation
+.. _installation: https://www.idiap.ch/software/bob/install
 .. _mailing list: https://groups.google.com/forum/?fromgroups#!forum/bob-devel
 .. _iris flower data set: http://en.wikipedia.org/wiki/Iris_flower_data_set

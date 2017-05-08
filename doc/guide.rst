@@ -46,7 +46,9 @@ of these statistics is provided by :py:attr:`bob.db.iris.stat_names`.
 Classifying the Iris Flowers with LDA
 -------------------------------------
 
-As an exemplary use case, we provide a script ``iris_lda.py`` that computes a Linear Discriminant Analysis (LDA) using the :py:class:`bob.learn.linear.FisherLDATrainer` using all data vectors.
-Afterward, it classifies all training data and plots histograms of the data projected on the first LDA component.
-A detailed explanation of this example script is given :ref:`here <iris_example>`.
-
+As an exemplary use case, we provide a script ``iris_lda.py`` that computes a
+Linear Discriminant Analysis (LDA) using the
+:py:class:`bob.learn.linear.FisherLDATrainer` using all data vectors.
+Afterward, it classifies all training data and plots histograms of the data
+projected on the first LDA component. A detailed explanation of this example
+script is given in |project|'s main documentation page.

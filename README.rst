@@ -2,9 +2,9 @@
 .. Thu 18 Aug 12:03:52 CEST 2016
 
 .. image:: http://img.shields.io/badge/docs-stable-yellow.svg
-   :target: http://pythonhosted.org/bob.db.iris/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.iris/stable/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.svg
-   :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.db.iris/master/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.iris/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.iris/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.iris/commits/master
 .. image:: https://gitlab.idiap.ch/bob/bob.db.iris/badges/master/coverage.svg

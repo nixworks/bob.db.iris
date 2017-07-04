@@ -13,8 +13,6 @@
    :target: https://gitlab.idiap.ch/bob/bob.db.iris
 .. image:: http://img.shields.io/pypi/v/bob.db.iris.svg
    :target: https://pypi.python.org/pypi/bob.db.iris
-.. image:: http://img.shields.io/pypi/dm/bob.db.iris.svg
-   :target: https://pypi.python.org/pypi/bob.db.iris
 .. image:: https://img.shields.io/badge/original-data--files-a000a0.png
    :target: http://en.wikipedia.org/wiki/Iris_flower_data_set
 

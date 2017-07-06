@@ -2,9 +2,9 @@
 .. Thu 18 Aug 12:03:52 CEST 2016
 
 .. image:: http://img.shields.io/badge/docs-stable-yellow.svg
-   :target: http://pythonhosted.org/bob.db.iris/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.iris/stable/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.svg
-   :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.db.iris/master/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.iris/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.iris/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.iris/commits/master
 .. image:: https://gitlab.idiap.ch/bob/bob.db.iris/badges/master/coverage.svg
@@ -12,8 +12,6 @@
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.iris
 .. image:: http://img.shields.io/pypi/v/bob.db.iris.svg
-   :target: https://pypi.python.org/pypi/bob.db.iris
-.. image:: http://img.shields.io/pypi/dm/bob.db.iris.svg
    :target: https://pypi.python.org/pypi/bob.db.iris
 .. image:: https://img.shields.io/badge/original-data--files-a000a0.png
    :target: http://en.wikipedia.org/wiki/Iris_flower_data_set
@@ -32,7 +30,7 @@ It can be used to demonstrate and test classification experiments.
 Installation
 ------------
 
-Complete Bob's `installation`_ instructions. Then, to install this pacakge,
+Complete Bob's `installation`_ instructions. Then, to install this package,
 run::
 
   $ conda install bob.db.iris

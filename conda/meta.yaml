@@ -1,0 +1,56 @@
+{% set name = 'bob.db.iris' %}
+{% set project_dir = environ.get('RECIPE_DIR') + '/..' %}
+
+package:
+  name: {{ name }}
+  version: {{ environ.get('BOB_PACKAGE_VERSION', '0.0.1') }}
+
+build:
+  entry_points:
+    - iris_lda.py = bob.db.iris.example.lda:main
+  number: {{ environ.get('BOB_BUILD_NUMBER', 0) }}
+  run_exports:
+    - {{ pin_subpackage(name) }}
+  script:
+    - cd {{ project_dir }}
+    {% if environ.get('BUILD_EGG') %}
+    - python setup.py sdist --formats=zip
+    {% endif %}
+    - python setup.py install --single-version-externally-managed --record record.txt
+
+requirements:
+  host:
+    - python {{ python }}
+    - setuptools {{ setuptools }}
+    - bob.io.base
+    - bob.measure
+    - bob.learn.linear
+    - bob.db.base
+    - matplotlib {{ matplotlib }}
+  run:
+    - python
+    - setuptools
+    - matplotlib
+
+test:
+  imports:
+    - {{ name }}
+  commands:
+    - iris_lda.py --help
+    - nosetests --with-coverage --cover-package={{ name }} -sv {{ name }}
+    - sphinx-build -aEW {{ project_dir }}/doc {{ project_dir }}/sphinx
+    - sphinx-build -aEb doctest {{ project_dir }}/doc sphinx
+    - conda inspect linkages -p $PREFIX {{ name }}  # [not win]
+    - conda inspect objects -p $PREFIX {{ name }}  # [osx]
+  requires:
+    - bob-devel {{ bob_devel }}.*
+    - nose
+    - coverage
+    - sphinx
+    - sphinx_rtd_theme
+
+about:
+  home: https://www.idiap.ch/software/bob/
+  license: BSD 3-Clause
+  summary: Bob access API for Fisher's Iris Flower Dataset
+  license_family: BSD
